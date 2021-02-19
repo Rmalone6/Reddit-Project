@@ -13,8 +13,8 @@ export class AppComponent {
     this.articles=[
 
       new Article('Angular', 'http://angular.io',5),
-      new Article('Angular', 'http://angular.io',3),
-      new Article('Angular', 'http://angular.io',1)
+      new Article('Google', 'http://google.ie',3),
+      new Article('Netflix', 'http://netflix.com',1)
 
     ];
   }
@@ -27,6 +27,10 @@ export class AppComponent {
     
     console.log(`Adding Article Title : ${title.value} and adding Article Link ${title.value}:`);
     return false;
+}
+
+sortedArticles() : Article[] {
+  return this.articles.sort((a:Article, b: Article) => b.votes - a.votes);
 }
 }
 
